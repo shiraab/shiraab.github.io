@@ -12,6 +12,14 @@ h1, h2, h3{
   padding: 5px;
 }
 
+h1 a {
+  color: black;
+}
+
+h2 {
+  font-size: calc(16px + 2vw);
+}
+
 h3 {
   font-size: calc(14px + 2vw);
   padding: 0px;
@@ -23,6 +31,26 @@ h4 {
 
 button p {
   font-size: calc(10px + 1vw);
+}
+
+#title-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#menu {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+#menu a {
+  color: black;
+  font-size: calc(10px + 1vw);
+}
+
+.curr-page {
+  font-style: italic;
 }
 
 .blurb {
@@ -96,4 +124,18 @@ button:focus {
 
 .show {
   display: block;
+}
+
+#about-this-site {
+  font-size: calc(10px + 1vw);
+}
+
+#about-this-site p {
+  font-size: calc(10px + 1vw);
+  text-align: justify;
+}
+
+#about-this-site a {
+  padding: 0px;
+  margin: 0px;
 }

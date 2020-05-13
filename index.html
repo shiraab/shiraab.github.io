@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shira is a writer, web developer and translator who is passionate about ethics in computer science.">
         <title>Shira Abramovich</title>
         <link rel="stylesheet"
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -11,10 +13,16 @@
         <script src="./index.js"></script>
     </head>
 <body onload="filterProjects('project')">
-  <h1>Shira Abramovich</h1>
-  <a id="skip" class="sr-only sr-only-focusable" href="#projects">Skip to projects</a>
-  <div id="menu" role="nav">
+  <span id="title-menu">
+  <h1>SHIRA ABRAMOVICH</h1>
+  <a id="skip-nav" class="sr-only sr-only-focusable" href="#main">Skip to blurb</a>
+  <a id="skip-proj" class="sr-only sr-only-focusable" href="#projects">Skip to projects</a>
+  <div id="menu" role="navigation">
+    <a class="curr-page" href="./index.html">Home</a>
+    <a href="./about.html">About this site</a>
+
   </div>
+</span>
   <div id="main" role="main">
     <div id="top">
     <div id="blurbdiv"><p class="blurb"> Shira is currently studying Translation and Computer Science at
@@ -138,6 +146,7 @@
           </p>
         </div>
         </div>
+
     </div>
   </div>
 </body>

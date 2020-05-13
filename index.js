@@ -1,5 +1,3 @@
-filterProjects("project");
-
 function toggleExpand(id) {
   let hiddenid = id + "-hidden";
   if(document.getElementById(id).getAttribute("aria-expanded") === "false"){
@@ -21,6 +19,8 @@ function filterProjects(byClass) {
     let el = todisplay[i];
     el.className = el.className + " show";
   }
+
+  document.getElementById(byClass).style.backgroundColor = "#cacccf"
 }
 
 function removeShow(){
@@ -35,4 +35,7 @@ function removeShow(){
           all[i].className = arr1.join(" ");
         }
     }
+    document.getElementById("tech").style.backgroundColor = "white";
+    document.getElementById("writing").style.backgroundColor = "white";
+    document.getElementById("project").style.backgroundColor = "white";
 }
