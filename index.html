@@ -3,12 +3,142 @@
 <head>
         <meta charset="utf-8">
         <title>Shira Abramovich</title>
-        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./index.css"/>
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="./index.css" type="text/css"/>
+        <script src="./index.js"></script>
     </head>
-<body>
-  <h1>Welcome to Shira's website!</h1>
-  <p>I am in the process of updating this website, so any strange text is a
-    result of that.</p>
+<body onload="filterProjects('project')">
+  <h1>Shira Abramovich</h1>
+  <a id="skip" class="sr-only sr-only-focusable" href="#projects">Skip to projects</a>
+  <div id="menu" role="nav">
+  </div>
+  <div id="main" role="main">
+    <div id="top">
+    <div id="blurbdiv"><p class="blurb"> Shira is currently studying Translation and Computer Science at
+      <a href="https://www.brown.edu/">Brown University</a>. She writes and translates with Limited Connection
+      Collective and The Legs of the Corduroy Pants. Right now, she is
+      surviving a global pandemic (as are you!), having previously survived
+      a year-long concussion. She is currently co-creating and managing
+      <a href="https://quarantine-university.tumblr.com/">Poems from a University Quarantine</a>,
+      a web-based collaborative writing platform and workshop. She makes websites,
+      poems, and coffee in her free time, and is passionate about accessibility
+      and ethics in computer science and in the world.</p></div>
+      <p id="note">This site is currently being updated. Stay tuned!</p>
+
+  </div>
+    <div id="projects">
+        <h2>Projects</h2>
+        <span id=filterDiv role="menuitemcheckbox">
+            <p>Filter by:</p>
+            <button id="project" onclick="filterProjects(this.id)">Show all</button>
+            <button id="tech" onclick="filterProjects(this.id)">Coding</button>
+            <button id="writing" onclick="filterProjects(this.id)">Writing</button>
+        </span>
+        <div class="project writing lead">
+            <button class="proj-button" id="poems-u-q" data-action="disclosure" aria-controls="poems-u-q" aria-expanded="false" onclick="toggleExpand(this.id)">
+             <span class="proj-head"><h3>Poems from a University Quarantine</h3><div class="year"><p>2020</p></div></span>
+             <p>How can we use art and writing to connect in quarantine?</p>
+            </button>
+          <p id="poems-u-q-hidden" aria-hidden="true">
+            After years of collaborating on experimental poetry projects,
+            Rachel Landau and I (aka The Legs of the Corduroy Pants)
+            founded and created
+            <a href="https://quarantine-university.tumblr.com/">Poems from a
+            University Quarantine</a> as a place to stay
+            connected and creating during the long months away from school.
+            As site manager, I manage its accessibility and organization.
+            We ran a two-part workshop series over Zoom with the
+            <a href="https://arts.brown.edu/">Brown Arts
+            Initiative</a> called POETRY IS FOR KITCHENS and are
+            currently extending the project into
+            a summer session curriculum for high school students.
+          </p>
+        </div>
+        <div class="project tech lead">
+
+            <button class="proj-button" id="accessible-tech" data-action="disclosure"
+            aria-controls="accessible-tech-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Accessible Web Programming</h3>
+              <div class="year"><p>2020</p></div>
+            </span>
+            <p>How can we teach novice
+            web developers to create accessible websites?</p></button>
+
+          <p id="accessible-tech-hidden" aria-hidden="true">
+            We created a fully-integrated accessibility curriculum for an
+            introductory web development course.
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="big-tech" data-action="disclosure"
+            aria-controls="big-tech-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head">
+              <h3>Big Tech Big Money</h3>
+              <div class="year"><p>2020</p></div>
+            </span><p>How can we better understand
+            the relationships between tech companies and politics?</p></button>
+
+          <p id="big-tech-hidden" aria-hidden="true">
+            We gathered, analyzed, and visualized data based on a central
+            question: did the scandals surrounding the 2016 election and
+            big tech companies change tech PACs' donation patterns?
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="municipal-translation" data-action="disclosure"
+            aria-controls="municipal-translation-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Municipal Translation API</h3><div class="year"><p>2020</p></div></span>
+            <p>How can we help cash-strapped
+            municipalities with high immigrant populations make content
+            accessible?</p></button>
+
+          <p id="municipal-translation-hidden" aria-hidden="true">
+            We worked with The Policy Lab to create a tool for
+            Wagtail CMS-based sites to automatically
+            submit published pages for translation
+            through a third-party API.
+          </p>
+        </div>
+        <div class="project writing lead">
+
+            <button class="proj-button" id="paris-place-memory" data-action="disclosure"
+            aria-controls="paris-place-memory-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Paris Place-Memory</h3><div class="year"><p>2019</p></div></span><p>How can we understand place-memory
+            through literature and history in Paris, France?</p></button>
+
+          <p id="paris-place-memory-hidden" aria-hidden="true">
+              Place-memory can be loosely described as the set of historical,
+              cultural, and social ideas relating to a particular place.
+              I planned, led, and conducted a semester-long foray into
+              place-memory in literature and history in Paris, culminating
+              in a French-language website.
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="indy-metro-map" data-action="disclosure"
+            aria-controls="municipal-translation-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Indy Metro Map</h3><div class="year"><p>2019</p></div></span><p>How can we relate newspaper articles
+            to the places about which they're written?</p></button>
+
+          <p id="indy-metro-map-hidden" aria-hidden="true">
+            We worked with an on-campus newspaper to build a map that allows
+            site editors to add articles to a map, connecting writing to
+            the place where it is based.
+          </p>
+        </div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>

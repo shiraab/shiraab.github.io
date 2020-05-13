@@ -1,8 +1,99 @@
-.body {
+body {
+  padding: 5px;
+  margin: 5px;
+  font-size: calc( 12px + 2vw );
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+}
+
+h1, h2, h3{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: calc( 20px + 2vw);
+  padding: 5px;
+}
+
+h3 {
+  font-size: calc(14px + 2vw);
+  padding: 0px;
+}
+
+h4 {
+  font-size: calc(12px + 2vw);
+}
+
+button p {
+  font-size: calc(10px + 1vw);
+}
+
+.blurb {
+  text-align: justify;
+  padding: 5px;
+}
+
+#note {
+  font-size: calc(7px + 2vw);
+  font-style: italic;
+}
+
+#top {
+  flex-direction: row;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  padding: 0px;
+  display: none;
+}
+
+.proj-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.proj-button {
+  flex-direction: column;
+  width: 100%;
+}
+
+button {
+  all: unset;
+  margin: 0px;
+  padding: 10px;
+  text-align: left;
+  flex: 1;
+  background-color: white;
+}
+
+button:hover {
+  background-color: #cacccf;
+}
+
+button:focus {
+  background-color: #cacccf;
+}
+
+[aria-hidden="true"]{
+  display:none;
+}
+
+[aria-hidden="false"]{
+  font-size: calc(10px + 1vw);
   padding: 5px;
   margin: 5px;
 }
 
-.header {
-    font-size: calc(16px+2vw);
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
 }
