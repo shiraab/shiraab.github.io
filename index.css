@@ -12,7 +12,7 @@ h1, h2, h3{
   padding: 5px;
 }
 
-h1 a {
+h3 a {
   color: black;
 }
 
@@ -30,13 +30,14 @@ h4 {
 }
 
 button p {
-  font-size: calc(10px + 1vw);
+  font-size: calc(12px + 1vw);
 }
 
 #title-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 2px solid black;
 }
 
 #menu {
@@ -46,11 +47,12 @@ button p {
 
 #menu a {
   color: black;
-  font-size: calc(10px + 1vw);
+  font-size: calc(12px + 2vw);
 }
 
 .curr-page {
   font-style: italic;
+  text-decoration: underline;
 }
 
 .blurb {
@@ -59,17 +61,19 @@ button p {
 }
 
 #note {
-  font-size: calc(7px + 2vw);
+  font-size: calc(10px + 1vw);
   font-style: italic;
 }
 
 #top {
   flex-direction: row;
+  border-bottom: 2px dotted black;
 }
 
 #projects {
   display: flex;
   flex-direction: column;
+  border-bottom: 2px dotted black;
 }
 
 .project {
@@ -113,7 +117,7 @@ button:focus {
 }
 
 [aria-hidden="false"]{
-  font-size: calc(10px + 1vw);
+  font-size: calc(12px + 1vw);
   padding: 5px;
   margin: 5px;
 }
@@ -127,15 +131,30 @@ button:focus {
 }
 
 #about-this-site {
-  font-size: calc(10px + 1vw);
+  font-size: calc(12px + 1vw);
 }
 
 #about-this-site p {
-  font-size: calc(10px + 1vw);
+  font-size: calc(12px + 1vw);
   text-align: justify;
 }
 
 #about-this-site a {
   padding: 0px;
   margin: 0px;
+}
+
+.year {
+  font-size: calc(12px + 1vw);
+}
+
+.publication {
+  font-size: calc(12px + 1vw);
+  width: 100%;
+  padding: 5px;
+  margin:0px;
+}
+
+.publication:hover {
+  background-color: #cacccf;
 }
