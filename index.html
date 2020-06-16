@@ -20,7 +20,7 @@
   <div id="menu" role="navigation">
     <a class="curr-page" href="./index.html">Home</a>
     <a href="./about.html">About this site</a>
-
+    <a href="./contact.html">Contact</a>
   </div>
 </span>
   <div id="main" role="main">
@@ -31,12 +31,12 @@
       surviving a global pandemic (as are you!), having previously survived
       a year-long concussion. She is currently co-creating and managing
       <a href="https://quarantine-university.tumblr.com/">Poems from a University Quarantine</a>,
-      a web-based collaborative writing platform and workshop. She makes websites,
+      a web-based collaborative writing platform and workshop, and doing front-end
+      web development at <a href="https://formally.us/home">Formally</a>. She makes websites,
       poems, and coffee in her free time, and is passionate about accessibility
       and ethics in computer science and in the world.</p></div>
       <p id="note">This site is currently being updated. Stay tuned!</p>
-
-  </div>
+    </div>
     <div id="projects">
         <h2>Projects</h2>
         <span id=filterDiv role="menuitemcheckbox">
@@ -45,8 +45,18 @@
             <button id="tech" onclick="filterProjects(this.id)">Coding</button>
             <button id="writing" onclick="filterProjects(this.id)">Writing</button>
         </span>
+        <div class="project tech">
+          <button class="proj-button" id="formally" data-action="disclosure" aria-controls="formally-hidden" aria-expanded="false" onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Formally</h3><div class="year"><p>2020</p></div></span>
+            <p>How can we use design and translation in web development to improve immigration forms?</p>
+           </button>
+           <p id="formally-hidden" aria-hidden="true">
+             Working at the intersection of web development, design, software engineering, and translation,
+             I'm helping revamp <a href="https://formally.us/home">Formally's</a> website.
+           </p>
+        </div>
         <div class="project writing lead">
-            <button class="proj-button" id="poems-u-q" data-action="disclosure" aria-controls="poems-u-q" aria-expanded="false" onclick="toggleExpand(this.id)">
+            <button class="proj-button" id="poems-u-q" data-action="disclosure" aria-controls="poems-u-q-hidden" aria-expanded="false" onclick="toggleExpand(this.id)">
              <span class="proj-head"><h3>Poems from a University Quarantine</h3><div class="year"><p>2020</p></div></span>
              <p>How can we use art and writing to connect in quarantine?</p>
             </button>
@@ -77,8 +87,17 @@
             web developers to create accessible websites?</p></button>
 
           <p id="accessible-tech-hidden" aria-hidden="true">
-            We created a fully-integrated accessibility curriculum for a
-            web development course.
+            Web accessibility is notoriously rare, and many web
+            developers say that this is because they were never taught how to
+            implement it. As TAs for our department's only Web Development course,
+            we were hired to create an all-new accessibility and ethics curriculum.
+            The course schedule is extremely tight, since students learn everything
+            from HTML basics to frameworks like Vue and React to database management
+            to mobile development. Our solution? Instead of creating new assignments,
+            we took existing assignments and asked ourselves what component of
+            accessible web development we could teach through it, starting with
+            simple things like alt text and WAI-ARIA landmarks and going up to dynamic text
+            resizing and skip links.
           </p>
         </div>
         <div class="project tech">
