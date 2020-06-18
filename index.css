@@ -64,14 +64,61 @@ button p {
   padding: 5px;
 }
 
-#note {
+.note {
   font-size: calc(10px + 1vw);
   font-style: italic;
+  padding: 5px;
 }
 
 #top {
   flex-direction: row;
   border-bottom: 2px dotted black;
+}
+
+#contact-container {
+  border-top: 2px dotted black;
+}
+
+#contact-container.contact-page {
+  border-top: none;
+  border-bottom: 2px dotted black;
+}
+
+#contact {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#contact ul {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0px;
+  padding: 0px 8px;
+}
+
+#contact li {
+  padding: 5px;
+  margin: 0px;
+}
+
+@media screen and (max-width: 360px) {
+  #contact {
+    flex-direction: column;
+  }
+
+  #contact ul {
+    padding: 0px;
+    width: 100%;
+  }
+
+  #contact li {
+    padding: 5px;
+  }
 }
 
 #projects {
