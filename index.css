@@ -25,7 +25,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(14px + 2vw);
+  font-size: calc(12px + 2vw);
   padding: 0px;
 }
 
@@ -195,6 +195,16 @@ button:focus {
   margin: 0px;
 }
 
+.egg {
+  font-size: calc(4px + 1vw);
+}
+
+.inline {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .year {
   font-size: calc(12px + 1vw);
 }
@@ -208,4 +218,20 @@ button:focus {
 
 .publication:hover {
   background-color: #cacccf;
+}
+
+.blog-post {
+  padding: 5px;
+  max-width: 100%;
+}
+
+.blog-post p {
+  font-size: calc(12px + 1vw);
+}
+
+.blog-footer {
+  max-width: 100%;
+  border-top: 1px dotted black;
+  font-size: calc(8px + 1vw);
+  font-style: italic;
 }
