@@ -5,10 +5,14 @@ body {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 }
 
-h1, h2, h3{
+h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: calc( 20px + 2vw);
+  padding: 5px;
+  font-size: calc(20px + 2vw);
+}
+
+h3 {
   padding: 5px;
 }
 
@@ -220,9 +224,17 @@ button:focus {
   background-color: #cacccf;
 }
 
+#blog-container {
+  border-top: 2px dotted black;
+}
+
 .blog-post {
   padding: 5px;
   max-width: 100%;
+}
+
+.blog-post ul {
+  font-size: calc(12px + 1vw);
 }
 
 .blog-post p {
@@ -231,7 +243,13 @@ button:focus {
 
 .blog-footer {
   max-width: 100%;
+  padding: 5px 0px;
   border-top: 1px dotted black;
+  border-bottom: 2px dotted black;
   font-size: calc(8px + 1vw);
   font-style: italic;
+}
+
+.blog-footer.bottom {
+  border-bottom: none;
 }
