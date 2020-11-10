@@ -145,6 +145,10 @@ button p {
   justify-content: space-between;
 }
 
+.note-description {
+  font-style: italic;
+}
+
 .proj-button {
   flex-direction: column;
   width: 100%;
