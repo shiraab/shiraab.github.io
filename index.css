@@ -257,3 +257,16 @@ button:focus {
 .blog-footer.bottom {
   border-bottom: none;
 }
+
+#artdiv {
+  display: flex;
+  flex-direction: column;
+}
+
+#artdiv iframe {
+  height: 600px;
+}
+
+.artimg {
+  max-width: 100vw;
+}
