@@ -5,6 +5,10 @@ body {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 }
 
+#pouq-body {
+  background-color: black;
+}
+
 h1, h2, h3 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -269,4 +273,126 @@ button:focus {
 
 .artimg {
   max-width: 100vw;
+}
+
+.pouq-page {
+  background-color: #f8dddd;
+  color: #000;
+  font: 100%/1.5 Avenir, Arial;
+  -webkit-font-smoothing: antialiased;
+  padding: 8px;
+  margin-left: 10%;
+  max-width: 80%;
+  border-radius: 8px;
+  display: flex;
+  align-content: center;
+}
+
+.pouq-page a {
+  color: black;
+  text-decoration: underline;
+}
+
+.pouq-page h1, .pouq-page h2, .pouq-page h3 {
+  color: #000;
+  font: 100%/1.5 Avenir, Arial;
+  -webkit-font-smoothing: antialiased;
+}
+
+.pouq-page h1 {
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 80%;
+  margin-left: 10%;
+}
+
+.pouq-page h2 {
+  font-style: oblique;
+  padding-left: 0px;
+  font-size: calc(17px + 1vw);
+  max-width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.pouq-page h3 {
+  font-weight: 500;
+  font-size: calc(16px + 1vw);
+  text-align: center;
+}
+
+.pouq-page h4 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: calc(15px + 1vw);
+  margin: 12px;
+}
+
+.pouq-page h5 {
+  font-weight: 500;
+  font-size: calc(15px + 1vw);
+  margin: 12px;
+}
+
+
+.pouq-page p {
+  font-size: calc(12px + 1vw);
+  margin: 12px;
+}
+
+.pouq-page .card {
+  max-width: 100%;
+  background-color: white;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 2px 2px;
+  font-size: calc(12px + 1vw);
+  display: flex;
+  align-items: center;
+}
+
+.pouq-page .card .card {
+  background-color: Gainsboro;
+  font-size: calc(12px + 1vw);
+}
+
+.card img {
+  max-width: 60%;
+}
+
+.testimonial-author {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gallery {
+  justify-content: space-between;
+  padding: 8px;
+  max-width: 100%;
+}
+
+.gallery iframe {
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.gallery img {
+  margin-top: 8px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.center {
+  justify-content: center;
+  text-align: center;
 }
