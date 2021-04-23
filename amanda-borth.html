@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shira is a writer, web developer and translator who is passionate about ethics in computer science.">
+        <title>It's Amanda's Birthday!!!!</title>
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="./index.css" type="text/css"/>
+        <script src="./index.js"></script>
+    </head>
+  <body id="amanda-borth">
+    <div id="main" role="main">
+      <div class='birthday-scrollable-container'>
+        <h1 class='birthday-scrollable'>It's Amanda's Birthday!! It's Amanda's Birthday!!</h1>
+      </div>
+      <div id='all-widgets'>
+        <div class='two-widget-container'>
+          <div class='widget'>
+            <button onclick="getJoke()">Tell me a yolk!</button>
+            <div id="jokediv">
+            </div>
+          </div>
+          <div class='widget'>
+            <button onclick="getInsult()">Insult me!</button>
+            <div id="insultdiv">
+            </div>
+          </div>
+        </div>
+        <div class='two-widget-container'>
+          <div class='widget'>
+            <button onclick="getThing()">Tell me why Amanda is the Bess-t!</button>
+            <div id="bessdiv">
+            </div>
+          </div>
+          <div class='widget'>
+            <button onclick="getShax()">Random Shakespeare quote</button>
+            <div id="shaxdiv">
+            </div>
+          </div>
+        </div>
+        <div class='widget full-size'>
+          <h2>Order Amanda insomnia cookies!</h2>
+          <form action=”mailto:sabramovich9@gmail.com” method=”POST” enctype=”multipart/form-data” name=”CookieForm”>
+            <label for="password">Password:</label><br/>
+            <input type="text" id="password" name="password"><br/>
+            <label for="numcookies">Number and type of cookies:</label><br/>
+            <input type="text" id="numcookies" name="numcookies"><br/>
+            <label for="ordertime">When should these be ready?</label><br/>
+            <input type="text" id="ordertime" name="ordertime"><br/>
+            <label for="ordertime">Where should these be ready? (Store? Home?)</label><br/>
+            <input type="text" id="ordertime" name="ordertime"><br/>
+            <input type="submit">
+          </form>
+        </div>
+      </div>
+      <div class='birthday-scrollable-container'>
+        <h1 class='birthday-scrollable'>It's Amanda's Birthday!! It's Amanda's Birthday!!</h1>
+      </div>
+    </div>
+  </div>
+  </body>
