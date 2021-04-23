@@ -473,3 +473,14 @@ h1.birthday-scrollable {
   flex-direction: column;
   max-width: 40%;
 }
+
+@media screen and (max-width: 800px) {
+  #all-widgets {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .two-widget-container {
+    max-width: 100%;
+  }
+}
