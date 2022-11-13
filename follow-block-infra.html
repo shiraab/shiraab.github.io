@@ -1,0 +1,234 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Designing infrastructure for following/blocking at Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index-v2.css" type="text/css" />
+  </head>
+  <body class="body-text">
+    <article id="4498be47-17e3-4a00-ab0d-e93781b1b0cd" class="page sans">
+      <header>
+        <div class="page-header-icon undefined">
+          <span id="title-menu">
+            <h1>SHIRA ABRAMOVICH</h1>
+            <a id="skip-nav" class="sr-only sr-only-focusable" href="#main"
+              >Skip to blurb</a
+            >
+            <a
+              id="skip-contact"
+              class="sr-only sr-only-focusable"
+              href="#contact-container"
+              >Skip to contact</a
+            >
+            <div id="menu" role="navigation">
+              <a class="curr-page" href="./index.html">Home</a>
+              <a href="./about.html">About this site</a>
+              <a href="./contact.html">Contact</a>
+            </div>
+          </span>
+        </div>
+        <div class="project-page-title">
+          <h2>Designing infrastructure for following and blocking</h2>
+          <img
+            src="./computer-image.jpg"
+            alt="Linoleum cut print depicting a laptop with several open, overlapping windows"
+            class="project-page-title-image"
+          />
+        </div>
+      </header>
+      <div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h2 class="">Introduction</h2>
+            <p class="">
+              After I wrote up a Trust and Safety plan for Studio, our first
+              project was implementing a new social feature and a safety feature
+              at the same time.
+            </p>
+            <p class="">
+              I was tasked with writing the RFC for the data model for user
+              following relationships, as well as user blocking relationships!
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h2 class="">The spec</h2>
+            <p class="">
+              Users should be able to follow any other user, as long as these
+              requirements are met:
+            </p>
+            <ul class="bulleted-list">
+              <li style="list-style-type: disc">
+                The target (followee) hasn’t blocked the source user;
+              </li>
+            </ul>
+            <ul class="bulleted-list">
+              <li style="list-style-type: disc">
+                The source (follower) hasn’t blocked the target user.
+              </li>
+            </ul>
+            <p class="">
+              In other words, blocks and follows are relationships that are
+              directional, but mutually exclusive. In other words, it’s
+              perfectly possible for two users to follow each other, or for two
+              users to block each other, but follows and blocks between two
+              users cannot coexist. Here’s a demo of the final feature.
+            </p>
+          </div>
+        </div>
+        <figure>
+          <iframe
+            src="https://drive.google.com/file/d/14M8nXohP3UylMLZpOFW4jNnrVBogO4qj/preview"
+            width="640"
+            height="360"
+            allow="autoplay"
+          ></iframe>
+          <figcaption>Demo of final following and blocking feature.</figcaption>
+        </figure>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h2 class="">The tradeoffs</h2>
+            <h3 class="">Database technology</h3>
+            <p class="">
+              We’ve been using both SQL and NoSQL solutions in our code
+              recently, with a consensus among engineers to use SQL wherever
+              possible.
+            </p>
+            <p class="">
+              I considered storing blocks and follows in each technology. Here’s
+              how that could play out, using best practices for each technology:
+            </p>
+            <ol type="1" class="numbered-list" start="1">
+              <li>
+                NoSQL: store follow/block relationships within the same document
+                as other user info, since NoSQL databases are not optimized for
+                JOINs.
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="d825fee2-0bc2-4537-9f13-886ce67e299e"
+              class="numbered-list"
+              start="2"
+            >
+              <li>
+                SQL: store follow/block relationships as individual rows within
+                a database, then cross-reference that with other tables in order
+                to enrich with user information.
+              </li>
+            </ol>
+            <p id="57c2831b-4bd6-4856-babe-3c2e14c9636e" class="">
+              Given the relational nature of the data, I decided that a
+              <strong>SQL-based solution</strong> would be best, since it allows
+              us to store the relationships separately, rather than querying a
+              larger, potentially unstructured user table (since many noSQL
+              technologies don’t provide automatic validation).
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h3 id="2dd079ea-69ea-4e5b-934d-9c0a39ad9287" class="">
+              How many tables?
+            </h3>
+            <p id="170b4dfa-c03c-4595-a40e-429c0af98f82" class="">
+              Now that I’d decided to store these new relationships in SQL, the
+              question came up: should these relationships be stored in one
+              database or two?
+            </p>
+            <p id="2c82c942-5e99-40fa-b50b-b55bc4a51063" class="">
+              Here’s the technical dilemma:
+            </p>
+            <ul id="1e5ef867-1ee5-4b6d-aea9-814effff8569" class="bulleted-list">
+              <li style="list-style-type: disc">
+                in
+                <strong>one database</strong>
+                of user relationships, we can enforce follow/block uniqueness at
+                the database level, by implementing a uniqueness constraint on
+                source and target users. This is very attractive, since SQL
+                promises us uniqueness and is very well-tested on this front,
+                and we’d eliminate the need for one-to-one JOINs (which are not
+                terribly efficient).
+              </li>
+            </ul>
+            <ul id="893b5e3c-544b-4f0f-8ff3-ac767badc90b" class="bulleted-list">
+              <li style="list-style-type: disc">
+                in
+                <strong>two databases</strong>, we enforce follow/block
+                uniqueness at the data access level, by checking both tables on
+                follow and block creation attempts. This includes calls to two
+                different databases.
+              </li>
+            </ul>
+            <p id="8c86152e-fa35-4b8c-a3e6-1be5ceb92369" class="">
+              Framed this way, one database seems quite attractive.
+              <strong>However,</strong>
+              there’s another, product-based dilemma here: which is more
+              futureproof?
+            </p>
+            <p id="84f84f80-2450-4c3f-88b5-bbe83e60fb29" class="">
+              The answer is, most likely,
+              <em>two</em>
+              databases. We’re not sure this is exactly the structure of user
+              relationships that will extend into the future. What if we change
+              “follows” to “friends”? Or what if we add another kind of
+              relationship? Our one-database solution doesn’t seem as
+              futureproof anymore.
+            </p>
+            <p id="256c4fe1-135e-4946-9646-be8d56a6d15a" class="">
+              As a result, I decided to implement the feature using
+              <em>two</em>
+              tables,
+              <em>two</em>
+              direct DAOs, and
+              <em>one</em>
+              SDK, which in turn is called by the server API. This way, we
+              always check both databases before doing any follow or block
+              manipulation, but we are free to add or remove user relationships
+              in the future.
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h2 id="a54711ed-7cf2-46fa-91c9-2fd0dfe5073e" class="">
+              Conclusion
+            </h2>
+            <p id="ca213492-15ba-4b3d-b9fb-781a1afeda85" class="">
+              Writing up this RFC was a lot of fun, complete with classic
+              Alice-and-Bob examples. Now that the feature is complete and has
+              its frontend components set up, I’m so excited to see how users
+              interact in a more social (following-inclusive)—<em>and</em>
+              more protected (blocking-inclusive)—environment.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div id="contact-container">
+      <span id="contact">
+        <h2>Contact:</h2>
+        <ul>
+          <li><a href="mailto:shira.abramovich@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/shira-abramovich/">LinkedIn</a>
+          </li>
+          <li><a href="https://github.com/shiraab">GitHub</a></li>
+          <li><a href="https://twitter.com/AbramovichShira">Twitter</a></li>
+        </ul>
+      </span>
+      <p class="note">Resume available upon request.</p>
+    </div>
+  </body>
+</html>

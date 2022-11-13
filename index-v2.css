@@ -4,15 +4,25 @@ body {
     font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    padding: 5px;
-    font-size: calc(20px + 2vw);
   }
-  
+
+  h1 {
+    font-size: clamp(32px, calc(20px + 2vw), 72px);
+  }
+
+  h2 {
+    font-size: clamp(24px, calc(16px + 1vw), 64px);
+  }
+
   h3 {
-    padding: 5px;
+    font-size: clamp(20px, calc(12px + 0.5vw), 56px);
+  }
+
+  h4 {
+    font-size: clamp(16px, calc(12px + 0.25vw, 48px));
   }
   
   h2 a {
@@ -177,34 +187,81 @@ body {
       padding: 5px;
     }
   }
-  
-  #projects {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 2px dotted black;
+
+  .project-page-title {
+    height: 64vh;
   }
-  
-  .project {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-    padding: 0px;
-    display: none;
+
+  .project-page-title h2 {
+    margin-bottom: 24px;
   }
-  
-  .proj-head {
+
+  .project-page-title-image {
+    width: 56vw;
+    margin-left: 8vw;
+  }
+
+  .project-page-two-column {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+  }
+
+  .project-page-body-section {
+    width: 60%;
+    padding: 24px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .project-page-diagram-section {
+    width: 40%;
+    margin-left: 4%
+  }
+
+  .body-text {
+    font-size: clamp(12px, calc(12px + 2vw), 24px)
+  }
+
+  figure {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  figcaption {
+    font-style: italic;
+  }
+
+  iframe {
+    border: none;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .project-page-title-image {
+      width: 84vw;
+      margin-left: 8vw;
+    }
+
+    .project-page-two-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-page-body-section {
+      width: 100%;
+    }
+
+    .project-page-diagram-section {
+      width: 100%;
+    }
   }
   
   .note-description {
     font-style: italic;
-  }
-  
-  .proj-button {
-    flex-direction: column;
-    width: 100%;
   }
   
   button {
@@ -311,164 +368,6 @@ body {
     border-bottom: none;
   }
   
-  #artdiv {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  #artdiv iframe {
-    height: 600px;
-  }
-  
-  .artimg {
-    max-width: 100vw;
-  }
-  
-  .pouq-page {
-    background-color: #f8dddd;
-    color: #000;
-    font: 100%/1.5 Avenir, Arial;
-    -webkit-font-smoothing: antialiased;
-    padding: 8px;
-    margin-left: 10%;
-    max-width: 80%;
-    border-radius: 8px;
-    display: flex;
-    align-content: center;
-  }
-  
-  .pouq-page a {
-    color: black;
-    text-decoration: underline;
-  }
-  
-  .pouq-page h1, .pouq-page h2, .pouq-page h3 {
-    color: #000;
-    font: 100%/1.5 Avenir, Arial;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  .pouq-page h1 {
-    font-weight: bold;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-    max-width: 80%;
-    margin-left: 10%;
-  }
-  
-  .pouq-page h2 {
-    font-style: oblique;
-    padding-left: 0px;
-    font-size: calc(17px + 1vw);
-    max-width: 80%;
-    margin-left: 10%;
-    text-align: center;
-  }
-  
-  .pouq-page h3 {
-    font-weight: 500;
-    font-size: calc(16px + 1vw);
-    text-align: center;
-  }
-  
-  .pouq-page h4 {
-    font-weight: 400;
-    font-style: italic;
-    font-size: calc(15px + 1vw);
-    margin: 12px;
-  }
-  
-  .pouq-page h5 {
-    font-weight: 500;
-    font-size: calc(15px + 1vw);
-    margin: 12px;
-  }
-  
-  
-  .pouq-page p {
-    font-size: calc(12px + 1vw);
-    margin: 12px;
-  }
-  
-  .pouq-page .card {
-    max-width: 100%;
-    background-color: white;
-    margin: 8px;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 2px 2px;
-    font-size: calc(12px + 1vw);
-    display: flex;
-    align-items: center;
-  }
-  
-  .pouq-page .card .card {
-    background-color: Gainsboro;
-    font-size: calc(12px + 1vw);
-  }
-  
-  .card img {
-    max-width: 60%;
-  }
-  
-  .testimonial-author {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .gallery {
-    justify-content: space-between;
-    padding: 8px;
-    max-width: 100%;
-  }
-  
-  .gallery iframe {
-    padding: 16px;
-    background-color: white;
-    border-radius: 8px;
-  }
-  
-  .gallery img {
-    margin-top: 8px;
-    padding: 16px;
-    background-color: white;
-    border-radius: 8px;
-  }
-  
-  img {
-    max-width: 100%;
-  }
-  
-  .center {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  h1.birthday-scrollable {
-    max-width: 200vw;
-    font-family: 'Courier New', monospace;
-  }
-  
-  .birthday-scrollable {
-    /* width: 100%; */
-    /* height: 100%; */
-    width: 150vw;
-    height: 1.5em;
-    overflow: hidden;
-    animation: scroll linear 15s infinite;
-    animation-timing-function: linear;
-    color: #900C3F;
-    text-decoration: #FF5733 underline;
-  }
-  
-  .birthday-scrollable-container {
-    max-width: 100%;
-    max-height: 100%;
-    overflow: hidden;
-  }
-  
   @keyframes scroll {
     0% {
       margin-left: 100%;
@@ -478,59 +377,4 @@ body {
     }
   }
   
-  #amanda-borth {
-    background-color: rgba(255, 195, 0, 0.7);
-    /* background-color: #DAF7A6; */
-    /* color: #581845; */
-    color: #FF5733;
-  }
-  
-  .widget button {
-    background-color: rgba(144, 12, 63, 1);
-    /* background-color: rgba(255, 87, 51, 1); */
-    color: rgba(255, 195, 0, 1);
-    border-radius: 8px;
-  }
-  
-  .widget {
-    border: 2px solid #900C3F;
-    border-radius: 8px;
-    padding: 8px;
-    background-color: #DAF7A6;
-    max-width: 100%;
-    margin: 16px;
-  }
-  
-  .widget.full-size {
-    max-width: 100%;
-  }
-  
-  #amanda-borth h2 {
-    font-family: 'Courier New', monospace;
-    color: #900C3F;
-  }
-  
-  #all-widgets {
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .two-widget-container {
-    display: flex;
-    flex-direction: column;
-    max-width: 40%;
-  }
-  
-  @media screen and (max-width: 800px) {
-    #all-widgets {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .two-widget-container {
-      max-width: 100%;
-    }
-  }
   
