@@ -1,0 +1,175 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Using complex CSS to create features that delight</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index-v2.css" type="text/css" />
+  </head>
+  <body class="body-text">
+    <span id="title-menu">
+      <h1>SHIRA ABRAMOVICH</h1>
+      <a id="skip-nav" class="sr-only sr-only-focusable" href="#main"
+        >Skip to blurb</a
+      >
+      <a
+        id="skip-contact"
+        class="sr-only sr-only-focusable"
+        href="#contact-container"
+        >Skip to contact</a
+      >
+      <div id="menu" role="navigation">
+        <a class="curr-page" href="./index.html">Home</a>
+        <a href="./about.html">About this site</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </span>
+    <article class="page sans">
+      <header class="project-page-title">
+        <h2>Using complex CSS to create features that delight</h2>
+        <img
+          src="./beep-boop-diptych.JPG"
+          alt="Two pages, each with two linoleum cut prints of computer terminals with the entered text 'beep boop'"
+          class="project-page-title-image"
+        />
+      </header>
+      <div class="project-page-body">
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h3 id="378e94ed-f4b3-4fcc-bc99-834e4f061385" class="">
+              Introduction
+            </h3>
+            <p id="06198613-5dff-4d56-8602-2139254490a8" class="">
+              Hot take, but I
+              <em>love</em>
+              CSS. It’s progressed a lot in the past few years, and I think it’s
+              really cool that you can do so much with a styling language, which
+              is also arguably Turing-complete.
+            </p>
+            <p id="315091b9-8f5c-4a99-9fdd-c8d1a72a9e7c" class="">
+              What I don’t absolutely love are SVGs. They’re a necessary evil on
+              the frontend, and they’re extremely powerful—but they are so, so
+              finicky, and when developing with them, I often find myself
+              resorting to the “change-one-thing-and-see-what-happens” style of
+              development until I grok the manipulation patterns of a specific
+              shape or stroke. There are SVG manipulation libraries out there
+              (for example:
+              <a href="https://www.framer.com/">Framer</a>, which is super cool
+              but paid), but often if you have a very niche, boutique feature,
+              it is worth just biting the bullet and implementing it in straight
+              SVG.
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h3 id="19d7b6a0-b6f0-418a-9b69-21ac91e83db3" class="">
+              Nerdin’ out on SVGs: the most finicky thing to delight you this
+              year
+            </h3>
+            <p id="305678d9-b801-450e-b247-30387d49108d" class="">
+              This year, I had the opportunity to lead the charge on a few
+              “delight” features at Studio: one was a spinning profile picture
+              timer for our new Studio Sessions feature; the other was a
+              class-specific feature in Simone Giertz’s Studio class that helped
+              students come up with random build ideas. It’s been lovely seeing
+              the response to these features, and a nice reminder that going the
+              extra mile to create that computed magic can really pay off.
+            </p>
+          </div>
+        </div>
+        <figure class="link-to-page">
+          <a href="complex-css/random-build-generator.html"
+            ><span class="icon">🎰</span>Idea Roulette with the Random Build
+            Generator</a
+          >
+        </figure>
+        <figure id="9a97e77a-9667-4f2c-a067-79e8549d6fcb" class="link-to-page">
+          <a href="complex-css/profile-picture-timer.html"
+            ><span class="icon">⏲️</span>Timing Joy with the Profile Picture
+            Timer</a
+          >
+        </figure>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h4 id="cbcceb9f-60d6-403b-b0d1-ba05dffc5406" class="">
+              Aside: React x SVGs
+            </h4>
+            <p id="cf5f3714-4c20-4128-9ce7-dbaeb88749e7" class="">
+              All of these features were developed using TypeScript React and
+              Vanilla Extract, a Tailwind-like CSS framework. Generally, clean
+              react patterns are all about state management and storing state in
+              variables.
+            </p>
+            <p id="4aeab2a5-b79d-4699-81bb-b80d916965dd" class="">
+              Developing with SVGs involves a lot of state management, but
+              because of the nature of SVGs, it feels a lot more like developing
+              with pure HTML and Javascript than developing with React. There’s
+              a lot of direct DOM manipulation using <code>ref</code> objects
+              (think <code>element.setAttribute</code>), which can feel janky or
+              unclean compared to React’s pure-code state management.
+            </p>
+            <p id="16bebdef-923c-4f42-ad67-b93eec14262f" class="">
+              The functions you write to create this complex magic in the
+              frontend will be very long; there is no way around that. They’ll
+              also have to make some use of lots of number crunching and some
+              magic numbers. If you use a lot of SVG manipulation in your app,
+              you may want to consider creating helper functions to manage basic
+              operations. Each of these features, for example, had a very long
+              <code>util</code> file to house all the functions we use and
+              separate them out so that they were testable.
+            </p>
+            <p id="ca03e5e9-b724-41cf-9ff0-a63143f60e46" class="">
+              In my experience, there just isn’t a substitute for working with
+              SVGs directly if you’re trying to create bespoke elements and
+              experiences. And this is the case even if you’re developing
+              complex visualizations, say, with D3.js, which relies on
+              underlying SVG manipulation as well.
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h3 id="9a3fc85d-3899-4e7b-be15-28586cf4954d" class="">
+              Conclusion: Long Live the Frontend
+            </h3>
+            <p id="d9c64ee5-0969-4ab0-8852-83186f723e6c" class="">
+              My heart is in the frontend, I can say that. Though I’m a proud
+              generalist and therefore a fullstack dev, there is so much joy and
+              richness in developing complex features on the frontend.
+            </p>
+            <p id="b7defedb-407c-44ca-9b50-8a6c48a6d13d" class="">
+              I feel that there’s an unfortunate stereotype that frontend devs
+              are less rigorous than backend or fullstack devs. Through projects
+              like these, my hope is that you understand how much thought,
+              iteration, and algorithmic thinking goes into making something
+              colorful, delightful, and joyous that users love to use!
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div id="contact-container">
+      <span id="contact">
+        <h2>Contact:</h2>
+        <ul>
+          <li><a href="mailto:shira.abramovich@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/shira-abramovich/">LinkedIn</a>
+          </li>
+          <li><a href="https://github.com/shiraab">GitHub</a></li>
+          <li><a href="https://twitter.com/AbramovichShira">Twitter</a></li>
+        </ul>
+      </span>
+      <p class="note">Resume available upon request.</p>
+    </div>
+  </body>
+</html>

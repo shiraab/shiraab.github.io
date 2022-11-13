@@ -1,0 +1,388 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Idea Roulette with the Random Build Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../index-v2.css" type="text/css" />
+  </head>
+  <body class="body-text">
+    <span id="title-menu">
+      <h1>SHIRA ABRAMOVICH</h1>
+      <a id="skip-nav" class="sr-only sr-only-focusable" href="#main"
+        >Skip to blurb</a
+      >
+      <a
+        id="skip-contact"
+        class="sr-only sr-only-focusable"
+        href="#contact-container"
+        >Skip to contact</a
+      >
+      <div id="menu" role="navigation">
+        <a href="../index-v2.html">Home</a>
+        <a href="../about.html">About this site</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </span>
+    <article id="e8311b93-9ba8-4a08-967e-957dbdcd6634" class="page sans">
+      <header class="project-page-title">
+        <h1 class="page-title">
+          Idea Roulette with the Random Build Generator
+        </h1>
+        <img
+          src="./adrienne-rich.JPG"
+          alt="Letterpress print of a quotation by Adrienne Rich: 'I choose to walk here. And to draw this circle.' With illustration of a hand pointing to a dark circle."
+          class="project-page-title-image vertical"
+        />
+      </header>
+      <div class="page-body">
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <p id="c6d4262a-0e7d-49b2-b954-630b241bf593" class="">
+              Simone Giertz is all about creating “non-useful” engineered
+              objects. Robots designed for silly uses. Her practice is all about
+              finding absurd and beautiful ways of creating projects. One of her
+              strategies is to generate her build randomly, using two bingo
+              cages. The first bingo cage gives an idea for what to create,
+              while the second randomly generates an idea for the material used
+              to create that object. You can see this process in action in her
+              class trailer:
+            </p>
+          </div>
+        </div>
+        <figure>
+          <img
+            src="simone-giertz.png"
+            alt="Simone Giertz uses her random build generator"
+          />
+          <figcaption>
+            Simone Giertz uses her random build generator.
+          </figcaption>
+        </figure>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <p id="5e2dba01-8c64-40c5-8fba-e383a57a7deb" class="">
+              We created a digital equivalent of Simone’s two-bingo-cage
+              process. Madi Ng designed it, and I was responsible for building
+              the feature. Here’s a demo.
+            </p>
+          </div>
+        </div>
+        <figure>
+          <iframe
+            src="https://drive.google.com/file/d/1NoYI2W1mcJ1mZDJzjLtVqzO5PVhLBzgr/preview"
+            width="640"
+            height="360"
+            allow="autoplay"
+          ></iframe>
+          <figcaption>Demo of the random build generator</figcaption>
+        </figure>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <p id="37a25898-112b-4111-9aa3-491b257700ea" class="">
+              The most fun and complex part of creating the random build
+              generator was something unobtrusive, but entirely necessary: the
+              connecting line. It took a
+              <em>lot</em>
+              of trial, error, and testing, but here, at a high level, is how we
+              built it.
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section">
+            <img
+              src="connector-line.png"
+              alt="A curving, dotted line that snakes from the top left corner to the bottom right corner"
+              class="project-page-diagram"
+            />
+          </div>
+          <div class="project-page-body-section">
+            <h2 id="d54d4699-a2d2-4cae-8bfe-1d42b82a1bde" class="">
+              Constructing the Curve
+            </h2>
+            <p id="b332f75c-cb82-42df-8ff3-377f2f987177" class="">
+              Take a look at this screenshot of the Random Build Generator. What
+              do you see?
+            </p>
+            <p id="888c1f19-8724-4a2b-bc80-d9e03c3ddb0d" class="">
+              Looks like one single, connecting curve, right? Well, sort of.
+            </p>
+            <p id="fcb9141c-ff73-4376-9e33-e5179d80706d" class="">
+              The curve here is actually made up of
+              <strong>three cubic bezier curves</strong>, which change
+              dynamically whenever a new item is selected in either column.
+            </p>
+
+            <h4>SVG curve 101:</h4>
+            <p id="295a59ea-03fb-48aa-b737-795f16dd5bfc" class="">
+              <code>path</code> is the name of the SVG element that’s used for
+              drawing a curve or line. It is very, very powerful! MDN has a
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths"
+                >good reference</a
+              >, which I used a great deal in both developing this feature and
+              in writing this explanation!
+            </p>
+            <p id="e6632048-de78-45a3-8ef5-6ba39ba28b35" class="">
+              In this example, we’re using is the <code>d</code> attribute,
+              which <strong>d</strong>raws the path. I like to think of
+              <code>d</code>&#x27;s value as a string of code commands, à la
+              turtle programming. For this curve, we have two general kinds of
+              commands:
+            </p>
+            <ol
+              type="1"
+              id="b3eff477-a4bb-4fe0-a988-95e138897418"
+              class="numbered-list"
+              start="1"
+            >
+              <li>
+                <code>M</code>: The <code>M</code> attribute
+                <strong>m</strong>oves the element across the XY plane of the
+                SVG box. Think of it as “translation” in geometry. The
+                <code>M</code> part of the string takes this format:
+                <p id="0948a9d4-9d00-4149-8727-2c2144035aeb" class="">
+                  <code>M [start x] [start y]</code>
+                </p>
+                <p id="ca0f81be-310f-43bd-9492-04bc98780670" class="">
+                  Where <code>start x</code> is the starting x-position of the
+                  curve, and <code>start y</code> is the starting y-position of
+                  the curve.
+                </p>
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="eaddf2a7-0b39-4e2c-9c88-c8fe42a76182"
+              class="numbered-list"
+              start="2"
+            >
+              <li>
+                <code>C</code>: The <code>C</code> attribute draws a
+                <strong>c</strong>ubic curve. As mentioned above, this curve
+                includes
+                <em>three</em>
+                curves, so we will have
+                <em>three</em>
+                <p id="3a6376c3-a099-452c-bfd2-33de92744a2b" class="">
+                  The <code>C</code> attribute takes the following format (line
+                  breaks for clarity):
+                </p>
+                <pre
+                  id="f1dde53d-9de5-474b-bd65-9792f3154375"
+                  class="code"
+                ><code>C 
+x1 y1 // control point for start of curve: where should the curve start?
+x2 y2 // control point for center of curve
+x y // ending point of the curve: where should the curve end?</code></pre>
+                <p id="09b57fdb-a370-4ab0-9843-f8182dc1295f" class="">
+                  Cubic bezier curves can be difficult to conceptualize—I really
+                  like MDN’s
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/Bezier_curve"
+                    >glossary page on Bézier curves</a
+                  >, which uses the following super-useful graphic to
+                  demonstrate the role of each of the three points!
+                </p>
+                <figure id="b0fe1c5e-1faf-40c5-bd91-1f1d126297cf" class="image">
+                  <a
+                    href="https://developer.mozilla.org/en-US/docs/Glossary/Bezier_curve/b%C3%A9zier_2_big.gif"
+                    ><img
+                      src="https://developer.mozilla.org/en-US/docs/Glossary/Bezier_curve/b%C3%A9zier_2_big.gif"
+                  /></a>
+                </figure>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section">
+            <img src="random_build_curves.png" class="project-page-diagram" />
+            <img
+              src="random_build_curves_compressed.png"
+              class="project-page-diagram"
+            />
+          </div>
+          <div class="project-page-body-section">
+            <p id="1bd1bc79-51de-42e3-b0b6-71791c06a2a3" class="">
+              We’re going to have
+              <strong>three</strong>
+              of these <code>C</code> curves in our <code>d</code> string. I’ve
+              labeled them as 1, 2, and 3 respectively.
+            </p>
+            <p id="482ec70e-0b8b-4b58-8ceb-375b16df9043" class=""></p>
+            <ol
+              type="1"
+              id="a88ac179-873f-42b5-8120-b1886c6b1473"
+              class="numbered-list"
+              start="1"
+            >
+              <li>
+                First curve, furthest to the left:
+                <pre
+                  id="ac07d651-332d-43d2-b8e8-92f0c46ac796"
+                  class="code"
+                ><code>C [start x] [start y]
+[start x + 1/2 width of svg] [start y +- 0.5]
+[start x + 1/2 width of svg] [start y +- curveRadius]</code></pre>
+                <p id="b21b1a36-6c40-4267-b553-a253c95e8e28" class="">
+                  <code>start x</code> and <code>start y</code> are exactly the
+                  same as the values stated in <code>M</code>, above.
+                </p>
+                <p id="dfe1170d-167e-476e-94d3-daba97c1abff" class="">
+                  <code>curveRadius</code> is how deep we want our curve. It’s
+                  calculated dynamically based on the width of the SVG container
+                  and the height difference between the two elements.
+                </p>
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="7c73f311-1b12-4a66-ab49-4441e069dced"
+              class="numbered-list"
+              start="2"
+            >
+              <li>
+                Second curve, which is minimally curved and pretty much looks
+                like a vertical line in most of the pictures:
+                <pre
+                  id="8b251f62-b00e-42c3-aa2a-1e9c7d3d5ce6"
+                  class="code"
+                ><code>C [start x + 1/2 width of svg] [start y +- curveRadius]
+[start x + 1/2 width of svg] [end y/2]
+[start x + 1/2 width of svg] [end y +- curveRadius]</code></pre>
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="fe276213-21de-4d78-9629-d797065174e8"
+              class="numbered-list"
+              start="3"
+            >
+              <li>
+                Third curve, furthest to the right:
+                <pre
+                  id="7824d523-de95-42a8-854c-3bf7226ca50c"
+                  class="code"
+                ><code>C [start x + 1/2 width of svg] [end y +- curveRadius]
+[start x + 1/2 width of svg] [end y +-0.5]
+[width of svg, a.k.a. end x] [end y]</code></pre>
+              </li>
+            </ol>
+            <p id="5d3d765d-bc31-49a6-9e48-112708f7ea7a" class="">
+              Coming away from this pseudocode, you probably have (at least) two
+              questions:
+            </p>
+            <ol
+              type="1"
+              id="f100f314-9027-4ba4-8e66-8bc359d043da"
+              class="numbered-list"
+              start="1"
+            >
+              <li>
+                <strong
+                  >Why all this business about the width of the SVG?</strong
+                >
+                <p id="3c13f99f-96d1-4743-b765-4067e18b2660" class="">
+                  Our modal has dynamic width, as should all good web features,
+                  in order to accommodate users who use a broad variety of
+                  screens. While our start and end y-positions are dynamic based
+                  on user selection, our x-positions will always correspond to
+                  the width of the SVG container on the screen, which is the
+                  distance between two elements. I’ve drawn this out on the
+                  image below:
+                </p>
+              </li>
+            </ol>
+            <ol
+              type="1"
+              id="1b42f570-0d2e-416e-8e24-8f9cc39b95ed"
+              class="numbered-list"
+              start="2"
+            >
+              <li>
+                <strong>Why all this +/- stuff?</strong>
+                <p id="87b192d6-b1b4-4da5-a75a-23bdbd2c74a5" class="">
+                  We don’t know initially whether the curve will go upwards,
+                  downwards, or neither, since a user could choose a left
+                  element that’s lower than the right or vice versa, or could
+                  choose two elements that are right across from each other. The
+                  +/- attributes change depending on this question.
+                </p>
+              </li>
+            </ol>
+
+            <p id="de0183ba-5bb3-45a6-ab7f-f11715f537da" class="">
+              Put all of that together and we have a template for setting the
+              <code>d</code> attribute for our path, which will be stringified
+              and set via the DOM’s <code>setAttribute</code> method:
+            </p>
+            <pre
+              id="4cb06985-52da-4dd8-b02f-2e32fa8698bd"
+              class="code"
+            ><code>M [start x] [start y]
+C [start x] [start y]
+[start x + 1/2 width of svg] [start y +- 0.5]
+[start x + 1/2 width of svg] [start y +- curveRadius]
+C [start x + 1/2 width of svg] [start y +- curveRadius]
+[start x + 1/2 width of svg] [end y/2]
+[start x + 1/2 width of svg] [end y +- curveRadius]
+C [start x + 1/2 width of svg] [end y +- curveRadius]
+[start x + 1/2 width of svg] [end y +-0.5]
+[width of svg, a.k.a. end x] [end y]</code></pre>
+            <p id="e5b5de54-3ad5-4b47-926b-45e5fdbe4cd5" class=""></p>
+            <p id="1485d495-c0b8-4729-b81d-a87a14669242" class="">
+              Add an animation to the curve whenever it changes and voilà! We
+              have what looks like one smooth, single curve, which moves
+              dynamically with user input and lends warmth to the feature.
+            </p>
+          </div>
+        </div>
+        <div class="project-page-two-column">
+          <div class="project-page-diagram-section"></div>
+          <div class="project-page-body-section">
+            <h2 id="1c87a377-ae21-4b0f-90cc-b517b3f07b60" class="">
+              Conclusion
+            </h2>
+            <p id="d6a4bb94-e6d4-4d60-9d84-ad198e746613" class="">
+              This feature was much bigger than one single line, but you could
+              certainly say that it’s this one line that held it together :)
+            </p>
+            <p id="c1335010-cc1d-4d5a-a15d-6324c14180af" class="">
+              Ultimately, the effort and time we put into this feature paid off:
+              by the time the first batch of students took this class, many of
+              their first projects were indeed generated directly with the
+              Random Build Generator! Seeing a gallery full of self-portraits
+              made of old keyboards, clocks made from string, and more wacky
+              combinations validated all of the thought and care we put into
+              this feature. Going the extra mile really does make all the
+              difference!
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <div id="contact-container">
+      <span id="contact">
+        <h2>Contact:</h2>
+        <ul>
+          <li><a href="mailto:shira.abramovich@gmail.com">Email</a></li>
+          <li>
+            <a href="https://www.linkedin.com/in/shira-abramovich/">LinkedIn</a>
+          </li>
+          <li><a href="https://github.com/shiraab">GitHub</a></li>
+          <li><a href="https://twitter.com/AbramovichShira">Twitter</a></li>
+        </ul>
+      </span>
+      <p class="note">Resume available upon request.</p>
+    </div>
+  </body>
+</html>
