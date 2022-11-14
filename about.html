@@ -1,67 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Shira is a writer, web developer and translator who is passionate about ethics in computer science.">
-        <title>Shira Abramovich</title>
-        <link rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="./index.css" type="text/css"/>
-        <script src="./index.js"></script>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shira is a writer, web developer and translator who is passionate about ethics in computer science."
+    />
+    <title>Shira Abramovich</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" type="text/css" />
+    <script src="./index.js"></script>
+  </head>
   <body>
     <span id="title-menu">
-    <h1>SHIRA ABRAMOVICH</h1>
-    <a id="skip-nav" class="sr-only sr-only-focusable" href="#main">Skip to main content</a>
-    <a id="skip-contact" class="sr-only sr-only-focusable" href="#contact-container">Skip to contact</a>
-    <div id="menu" role="navigation">
-      <a href="./index.html">Home</a>
-      <a class="curr-page" href="./about.html">About this site</a>
-      <a href="./contact.html">Contact</a>
-    </div>
-  </span>
+      <h1>SHIRA ABRAMOVICH</h1>
+      <a id="skip-nav" class="sr-only sr-only-focusable" href="#main"
+        >Skip to main content</a
+      >
+      <a
+        id="skip-contact"
+        class="sr-only sr-only-focusable"
+        href="#contact-container"
+        >Skip to contact</a
+      >
+      <div id="menu" role="navigation">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a class="curr-page" href="./about.html">About this site</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </span>
     <div id="main" role="main">
-    <div id="about-this-site">
+      <div id="about-this-site">
         <h2>About this site</h2>
         <p>
           According to
-          <a href="https://g3ict.org/headlines/new-report-finds-majority-of-websites-in-the-u-s-are-inaccessible">
+          <a
+            href="https://g3ict.org/headlines/new-report-finds-majority-of-websites-in-the-u-s-are-inaccessible"
+          >
             a recent report by Deque,
-          </a> almost 70% of websites
-          in the US do not meet even basic
-          elements of the
-          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines,
-          </a> today's
-          gold standard for web accessibility. Even
+          </a>
+          almost 70% of websites in the US do not meet even basic elements of
+          the
+          <a href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+            >Web Content Accessibility Guidelines,
+          </a>
+          today's gold standard for web accessibility. Even
           <a href="https://www.cnbc.com/2019/10/07/dominos-supreme-court.html">
-          major restaurant chains,
+            major restaurant chains,
           </a>
-          <a href="https://www.hollywoodreporter.com/thr-esq/beyonces-parkwood-entertainment-sued-1172909">
+          <a
+            href="https://www.hollywoodreporter.com/thr-esq/beyonces-parkwood-entertainment-sued-1172909"
+          >
             public figures,
-          </a> and
-          <a href="https://time.com/5675691/2020-election-candidates-website-disability-accessibility/">
-          presidential campaigns
           </a>
-           have websites that
-          remain inaccessible to blind and low-sighted users.
+          and
+          <a
+            href="https://time.com/5675691/2020-election-candidates-website-disability-accessibility/"
+          >
+            presidential campaigns
+          </a>
+          have websites that remain inaccessible to blind and low-sighted users.
         </p>
         <p>
-          I think the reason for this is twofold: people a) don't know
-          what accessibility guidelines are and b) they don't understand
-          why they are important. I get it: I used to be one of these
-          people. It took me a serious concussion, during which I used
-          screen readers to access the internet, to actually start caring.
+          I think the reason for this is twofold: people a) don't know what
+          accessibility guidelines are and b) they don't understand why they are
+          important. I get it: I used to be one of these people. It took me a
+          serious concussion, during which I used screen readers to access the
+          internet, to actually start caring.
         </p>
+        <p>It shouldn't have.</p>
         <p>
-          It shouldn't have.
-        </p>
-        <p>
-          For that reason, I've created this site to be as accessible as
-          I can. I built and designed it using basic HTML/CSS/Javascript. Here
-          are some features and development practices I've included:
+          For that reason, I've created this site to be as accessible as I can.
+          I built and designed it using basic HTML/CSS/Javascript. Here are some
+          features and development practices I've included:
         </p>
         <ul>
           <li>Skip links</li>
@@ -72,31 +90,42 @@
           <li>Heading structure</li>
         </ul>
         <p>
-          Still, I know that accessibility is a process, so
-           please <a href="./contact.html">reach out</a> if you are having any issues
-          accessing this site, or if you have questions about how to make
-          your site more accessible! Remember:
-          <a href="https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94">
-          Designing for accessibility
-          is not that hard,</a> and
+          Still, I know that accessibility is a process, so please
+          <a href="./contact.html">reach out</a> if you are having any issues
+          accessing this site, or if you have questions about how to make your
+          site more accessible! Remember:
+          <a
+            href="https://uxdesign.cc/designing-for-accessibility-is-not-that-hard-c04cc4779d94"
+          >
+            Designing for accessibility is not that hard,</a
+          >
+          and
           <a href="https://the-pastry-box-project.net/anne-gibson/2014-july-31">
-            disability is all around us.</a>
-          </p>
-    </div>
-    <div id="contact-container">
-      <span id="contact">
-        <h2>Contact:</h2>
+            disability is all around us.</a
+          >
+        </p>
+      </div>
+      <div id="contact-container">
+        <span id="contact">
+          <h2>Contact:</h2>
           <ul>
             <li><a href="mailto:shira.abramovich@gmail.com">Email</a></li>
-            <li><a href="https://www.linkedin.com/in/shira-abramovich/">LinkedIn</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/shira-abramovich/"
+                >LinkedIn</a
+              >
+            </li>
             <li><a href="https://github.com/shiraab">GitHub</a></li>
-            <li><a href='https://twitter.com/AbramovichShira'>Twitter</a></li>
+            <li><a href="https://twitter.com/AbramovichShira">Twitter</a></li>
           </ul>
-      </span>
-      <span class='inline'>
-        <p class="note">Resume available upon request.</p>
-        <p class="note egg">Looking for an <a href='./blog.html'>easter egg?</a></p>
-      </span>
+        </span>
+        <span class="inline">
+          <p class="note">Resume available upon request.</p>
+          <p class="note egg">
+            Looking for an <a href="./blog.html">easter egg?</a>
+          </p>
+        </span>
+      </div>
     </div>
-  </div>
   </body>
+</html>
