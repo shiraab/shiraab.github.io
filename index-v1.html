@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Shira is a writer, web developer and translator who is passionate about ethics in computer science.">
+        <title>Shira Abramovich</title>
+        <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="./index.css" type="text/css"/>
+        <script src="./index.js"></script>
+    </head>
+<body onload="filterProjects('project')">
+  <span id="title-menu">
+  <h1>SHIRA ABRAMOVICH</h1>
+  <a id="skip-nav" class="sr-only sr-only-focusable" href="#main">Skip to blurb</a>
+  <a id="skip-proj" class="sr-only sr-only-focusable" href="#projects">Skip to projects</a>
+  <a id="skip-proj" class="sr-only sr-only-focusable" href="#publications">Skip to publications</a>
+  <a id="skip-contact" class="sr-only sr-only-focusable" href="#contact-container">Skip to contact</a>
+  <div id="menu" role="navigation">
+    <a class="curr-page" href="./index.html">Home</a>
+    <a href="./projects.html">Projects</a>
+    <a href="./about.html">About this site</a>
+    <a href="./contact.html">Contact</a>
+  </div>
+</span>
+  <div id="main" role="main">
+    <div id="top">
+    <div id="blurbdiv">
+      <!-- <p class="blurb-splash"></p> -->
+      <p class="blurb">
+        Shira is a writer, translator, and full-stack software engineer currently working
+        at <a href='https://studio.com/'>Studio</a>. She also writes and
+        translates with <a href='https://connexionlimitee.github.io/'>Limited Connection Collective</a>.
+        In recent years, she has been an <a href="https://quarantine-university.tumblr.com/">editor</a>, a
+        <a href='https://www.codingitforward.com/civic-digital-fellowship'>Civic Digital Fellow</a>, a
+        <a href='https://www.instagram.com/undergroundcoffeeshop/?hl=en'>barista,</a> an
+        <a href='https://formally.us/home'>intern</a>, and a <a href="http://ethics.cs.brown.edu/">responsible computing</a> teaching assistant.
+      She recently graduated from
+      <a href="https://www.brown.edu/">Brown University</a> with degrees in Translation and Computer Science.
+    </p>
+  </div>
+      <p class="note">Much is afoot; this site is currently being updated. Stay tuned!</p>
+    </div>
+    <div id="latest">
+      <h2>Latest</h2>
+      <span class="inline">
+        <h3>
+          New Book in Translation, Out Now! Hooray!
+        </h3>
+        <p>June 2022</p>
+      </span>
+      <p>My co-translation of Mónica de la Torre's The Happy End / All Welcome (Ugly Duckling Presse, 2017) with <a href='https://connexionlimitee.github.io/'>Limited Connection Collective</a> is out now in French from Joca Seria! <a href="https://twitter.com/AbramovichShira/status/1535199304058552320">I tweeted about it.</a> You can <a href="http://www.jocaseria.fr/Livres/Fiche%20livre/happyend.html">order a copy.</a>
+      </p>
+      <span class="inline">
+      <h3>
+        New Essay in Kernel Magazine
+      </h3>
+      <p>Fall 2021</p>
+      </span>
+    </span>
+    <p>My essay on concussions, CS, commuunity, and recovery was published in Kernel Magazine. <a href="https://twitter.com/AbramovichShira/status/1476067234380455940">I tweeted about it.</a> You can <a href="https://www.kernelmag.io/pieces/beyond-plus-escape">read it here.</a>
+    </p>
+    </div>
+    <div id="projects">
+        <h2>Projects</h2>
+        <span id=filterDiv role="menuitemcheckbox">
+            <p>Filter by:</p>
+            <button id="project" onclick="filterProjects(this.id)">Show all</button>
+            <button id="tech" onclick="filterProjects(this.id)">Coding</button>
+            <button id="writing" onclick="filterProjects(this.id)">Writing</button>
+        </span>
+        <div class="project tech lead">
+
+            <button class="proj-button" id="data-ethics" data-action="disclosure"
+            aria-controls="data-ethics-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Ethics for Computing Foundations</h3>
+              <div class="year"><p>2020-2021</p></div>
+            </span>
+            <p>How can we teach new students of computer science to think about socially responsible computing?</p></button>
+
+          <p id="data-ethics-hidden" aria-hidden="true">
+            <a href="http://cs.brown.edu/courses/csci0111/">CS111</a>
+            is Brown CS's newest introductory computer science course, which
+            blends computing foundations and data science. I
+            was in charge of creating a coherent curriculum that would teach
+            all students, regardless of political leanings or past experience with
+            data ethics, to think about the ways in which data and software affect the world,
+            and the power that they, as data scientists, would soon have in their grasp.
+            In addition to curriculum development and evaluation, I also led grading – which was no small task
+            in a class of 300 students.
+            We now teach students about data privacy, harmful assumptions in data encoding,
+            stakeholders and decision-making, and a little bit about policy. This project was part of Brown CS's
+            <a href="http://ethics.cs.brown.edu/">Socially Responsible Computing initiative.</a>
+            <br/><br/>
+            The following semester, I co-led the responsible computing integration for 
+            CS15, Brown CS's oldest running introductory computer science course, taught 
+            by Andy van Dam. In a team of two, I was in charge of adding a segment 
+            on responsible computing in the news to each lecture – which included 
+            everything from the January 6th hearings with Meta to ongoing issues 
+            of algorithmic bias to Dr. Timnit Gebru's firing 
+            from Google.
+          </p>
+        </div>
+        <div class="project tech">
+          <button class="proj-button" id="formally" data-action="disclosure" aria-controls="formally-hidden" aria-expanded="false" onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Formally</h3><div class="year"><p>2020</p></div></span>
+            <p>How can we use design and translation in web development to improve immigration forms?</p>
+           </button>
+           <p id="formally-hidden" aria-hidden="true">
+             Working at the intersection of web development, design, software engineering, and translation,
+             I helped revamp <a href="https://formally.us/home">Formally's</a> website.
+           </p>
+        </div>
+        <div class="project writing lead">
+            <button class="proj-button" id="poems-u-q" data-action="disclosure" aria-controls="poems-u-q-hidden" aria-expanded="false" onclick="toggleExpand(this.id)">
+             <span class="proj-head"><h3>Poems from a University Quarantine</h3><div class="year"><p>2020</p></div></span>
+             <p>How can we use art and writing to connect in quarantine?</p>
+            </button>
+          <p id="poems-u-q-hidden" aria-hidden="true">
+            After years of collaborating on experimental poetry projects,
+            Rachel Landau and I (aka The Legs of the Corduroy Pants)
+            founded and created
+            <a href="https://quarantine-university.tumblr.com/">Poems from a
+            University Quarantine</a> as a place to stay
+            connected and creating during the long months away from school.
+            As site manager, I managed its accessibility and organization.
+            We ran a two-part workshop series over Zoom with the
+            <a href="https://arts.brown.edu/">Brown Arts
+            Initiative</a> called POETRY IS FOR KITCHENS. Our summer 2020 programming,
+            <a href="https://quarantine-university.tumblr.com/summer">POETRY IS FOR SUMMERS,</a> included a summer workshop
+            for high school and college students and a reading series which featured
+            poets such as Cassidy McFadzean, Domenica Martinello and Mónica de la Torre.
+            This project was supported by a grant from the <a href="https://arts.brown.edu/">Brown Arts Initiative</a> .
+          </p>
+        </div>
+        <div class="project tech lead">
+
+            <button class="proj-button" id="accessible-tech" data-action="disclosure"
+            aria-controls="accessible-tech-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Accessible Web Programming</h3>
+              <div class="year"><p>2020</p></div>
+            </span>
+            <p>How can we teach novice
+            web developers to create accessible websites?</p></button>
+
+          <p id="accessible-tech-hidden" aria-hidden="true">
+            Web accessibility is notoriously rare, and many web
+            developers say that this is because they were never taught how to
+            implement it. As TAs for our department's only Web Development course,
+            I was hired to create an all-new accessibility and ethics curriculum.
+            The course schedule is extremely tight, since students learn everything
+            from HTML basics to frameworks like Vue and React to database management
+            to mobile development. The solution? Instead of creating new assignments,
+            I took existing assignments and asked what component of
+            accessible web development could be taught through it, starting with
+            simple principles like alt text and WAI-ARIA landmarks and going up to dynamic text
+            resizing and skip links. This project was part of Brown CS's
+            <a href="http://ethics.cs.brown.edu/">Socially Responsible Computing initiative.</a>
+            As part of my work as a
+            <a href='https://cs.brown.edu/about/diversity/health-wellness-student-advocates/'>
+              Brown CS Health and Wellness Advocate,
+            </a> I worked with courses and with the department as a whole to 
+            ensure that their respective sites meet web accessibility standards.
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="big-tech" data-action="disclosure"
+            aria-controls="big-tech-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head">
+              <h3>Big Tech Big Money</h3>
+              <div class="year"><p>2020</p></div>
+            </span><p>How can we better understand
+            the relationships between tech companies and politics?</p></button>
+
+          <p id="big-tech-hidden" aria-hidden="true">
+            We gathered, analyzed, and visualized data based on a central
+            question: did the scandals surrounding the 2016 election and
+            big tech companies change tech PACs' donation patterns?
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="municipal-translation" data-action="disclosure"
+            aria-controls="municipal-translation-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Municipal Translation API</h3><div class="year"><p>2020</p></div></span>
+            <p>How can we help cash-strapped
+            municipalities with high immigrant populations make content
+            accessible?</p></button>
+
+          <p id="municipal-translation-hidden" aria-hidden="true">
+            We worked with The Policy Lab to create a tool for
+            Wagtail CMS-based sites to automatically
+            submit published pages for translation
+            through a third-party API.
+          </p>
+        </div>
+        <div class="project writing lead">
+
+            <button class="proj-button" id="paris-place-memory" data-action="disclosure"
+            aria-controls="paris-place-memory-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Paris Place-Memory</h3><div class="year"><p>2019</p></div></span><p>How can we understand place-memory
+            through literature and history in Paris, France?</p></button>
+
+          <p id="paris-place-memory-hidden" aria-hidden="true">
+              Place-memory can be loosely described as the set of historical,
+              cultural, and social ideas relating to a particular place.
+              I planned, led, and conducted a semester-long foray into
+              place-memory in literature and history in Paris, culminating
+              in a French-language website.
+          </p>
+        </div>
+        <div class="project tech">
+
+            <button class="proj-button" id="indy-metro-map" data-action="disclosure"
+            aria-controls="municipal-translation-hidden" aria-expanded="false"
+            onclick="toggleExpand(this.id)">
+            <span class="proj-head"><h3>Indy Metro Map</h3><div class="year"><p>2019</p></div></span><p>How can we relate newspaper articles
+            to the places about which they're written?</p></button>
+
+          <p id="indy-metro-map-hidden" aria-hidden="true">
+            We worked with an on-campus newspaper to build a map that allows
+            site editors to add articles to a map, connecting writing to
+            the place where it is based.
+          </p>
+        </div>
+        <div class="project writing lead">
+            <button class="proj-button" id="misplaced-pieces" data-action="disclosure" aria-controls="poems-u-q" aria-expanded="false" onclick="toggleExpand(this.id)">
+             <span class="proj-head"><h3>The Misplaced Pieces</h3><div class="year"><p>2018</p></div></span>
+             <p>What have paintings in museums seen?</p>
+            </button>
+          <p id="misplaced-pieces-hidden" aria-hidden="true">
+            In late 2018, I conducted a research project about Nazi looted art at
+            the <a href="https://www.mfa.org/">Museum of Fine Arts Boston.</a> I corresponded with
+            <a href="https://twitter.com/Victoria_S_Reed">Dr. Victoria
+            Reed,</a> Provenance Curator at the MFA, whose research helped me
+            identify two paintings in the collection with particularly
+            interesting backstories. After spending several days at the museum
+            writing, looking, and taking film photographs, I produced a
+            long-form lyric essay,
+            which I printed and hand-bound.
+          </p>
+        </div>
+        </div>
+        <div id="publications">
+          <h2>Publications & Awards</h2>
+              <div class="publication writing">
+                <span class="proj-head"><h3>
+                  <a href="https://revuepointdechute.fr/">
+                    Revue Point de chute</a></h3><div class="year"><p>2021</p></div></span>
+                 <p>Poetry (mine, originally in English), translated by <a href='https://twitter.com/camylitt?lang=en'>Camille Blanc</a> into French</p>
+              </div>
+              <div class="publication writing translation">
+                <span class="proj-head"><h3>
+                  <a href="https://fragile-revue.fr/la-lettre/6-82/">
+                    Revue Fragile</a></h3><div class="year"><p>2020</p></div></span>
+                 <p>English-to-French translation of "$6.82" by Mónica de la Torre</p>
+                 <p class="note-description">with Limited Connection Collective</p>
+              </div>
+              <div class="publication writing translation">
+                <span class="proj-head"><h3>
+                  <a href="https://fragile-revue.fr/la-lettre/didier-et-zizou-par-chen-chen/">
+                    Revue Fragile</a></h3><div class="year"><p>2020</p></div></span>
+                 <p>English-to-French translation of "Didier and Zizou" by Chen Chen</p>
+                 <p class="note-description">with Limited Connection Collective</p>
+              </div>
+              <div class="publication writing translation">
+                <span class="proj-head"><h3>
+                  <a href="https://fragile-revue.fr/la-lettre/connexion-limitee-limited-connection/">
+                    Revue Fragile</a></h3><div class="year"><p>2020</p></div></span>
+                 <p>Interview with Limited Connection Collective</p>
+                 <p class="note-description">with Limited Connection Collective</p>
+              </div>
+              <div class="publication writing interview">
+                <span class="proj-head"><h3>
+                  <a href="https://theadroitjournal.org/2019/12/10/the-simple-act-of-noticing-a-conversation-with-domenica-martinello/">
+                    The Adroit Journal</a></h3><div class="year"><p>2019</p></div></span>
+                 <p>Interview with Domenica Martinello</p>
+              </div>
+              <div class="publication writing award">
+                <span class="proj-head"><h3>
+                    Edwin M. Honig Memorial Award</h3><div class="year"><p>2019</p></div></span>
+                 <p>For the best poem or poems in honor of poet, translator and founder of Literary Arts, Edwin Honig</p>
+              </div>
+              <div class="publication writing award">
+                <span class="proj-head"><h3>
+                    Claudia Ann Seaman Award</h3><div class="year"><p>2017</p></div></span>
+                 <p>Poetry</p>
+              </div>
+              <div class="publication writing interview">
+                <span class="proj-head"><h3>
+                  <a href="https://theadroitjournal.org/issue-nineteen-a-conversation-with-alexander-weinstein/">
+                    The Adroit Journal</a></h3><div class="year"><p>2016</p></div></span>
+                 <p>Interview with Alexander Weinstein</p>
+              </div>
+        </div>
+        <div id="contact-container">
+          <span id="contact">
+            <span>
+          <h2>Contact:</h2>
+          <p class="note">Resume available upon request.</p>
+        </span>
+              <ul>
+                <li><a href="mailto:shira.abramovich@gmail.com">Email</a></li>
+                <li><a href="https://www.linkedin.com/in/shira-abramovich/">LinkedIn</a></li>
+                <li><a href="https://github.com/shiraab">GitHub</a></li>
+                <li><a href='https://twitter.com/AbramovichShira'>Twitter</a></li>
+              </ul>
+          </span>
+        </div>
+    </div>
+
+</body>
+</html>
