@@ -498,7 +498,7 @@ body {
   }
 
   #trust-and-safety {
-    background-image: url("./complex-css/letterpress-tray.jpg");
+    background-image: url("./complex-css/letterpress-tray.JPG");
     object-fit: scale-down;
     width: calc(144px + 20vw);
     height: calc(144px + 20vw);
