@@ -483,6 +483,26 @@ body {
     margin-left: 10vw;
   }
 
+  #random-build {
+    background-image: url("./complex-css/press-bed.JPG");
+    object-fit: cover;
+    width: calc(144px + 20vw);
+    height: calc(144px + 20vw);
+    margin-top: -30vh;
+    background-position: 40% 40%;
+    background-size: cover;
+  }
+
+  #profile-picture {
+    background-image: url("./complex-css/adrienne-rich.JPG");
+    object-fit: scale-down;
+    width: calc(176px + 30vw);
+    height: calc(176px + 30vw);
+    background-position: 50% 120%;
+    margin-top: 20vh;
+    margin-left: 10vw;
+  }
+
   .projects-top {
     min-height: 90vh;
     display: flex;
