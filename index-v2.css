@@ -420,7 +420,7 @@ body {
     display: grid;
     grid-template-columns: 40% 60%;
     min-height: 50vh;
-    max-height: 70vh;
+    max-height: 120vh;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -467,7 +467,7 @@ body {
     height: 10vw;
     top: 20vh;
     left: 90vw;
-    transition: left 0.2s linear, width 0.2s linear, height 0.2s linear;
+    transition: left 0.2s linear, top 0.2s linear, width 0.2s linear, height 0.2s linear;
   }
 
   #follow-block {
@@ -490,21 +490,31 @@ body {
   #random-build {
     background-image: url("./complex-css/press-bed.JPG");
     object-fit: cover;
+    width: calc(176px + 30vw);
+    height: calc(176px + 30vw);
+    background-position: 50% 120%;
+    margin-top: 10vh;
+    margin-left: 10vw;
+  }
+
+  #trust-and-safety {
+    background-image: url("./complex-css/letterpress-tray.jpg");
+    object-fit: scale-down;
     width: calc(144px + 20vw);
     height: calc(144px + 20vw);
     margin-top: -30vh;
-    background-position: 40% 40%;
-    background-size: cover;
+    margin-left: 20vw;
   }
 
   #profile-picture {
     background-image: url("./complex-css/adrienne-rich.JPG");
     object-fit: scale-down;
-    width: calc(176px + 30vw);
-    height: calc(176px + 30vw);
-    background-position: 50% 120%;
-    margin-top: 20vh;
-    margin-left: 10vw;
+    width: calc(144px + 20vw);
+    height: calc(144px + 20vw);
+    margin-top: -30vh;
+    background-position: 40% 40%;
+    background-size: cover;
+    
   }
 
   .projects-top {
@@ -515,9 +525,21 @@ body {
     border-bottom: 2px dotted black;
   }
 
+  @media screen and (max-width: 1000px) {
+    #trust-and-safety {
+      margin-left: 0vw;
+      margin-top: -10vh;
+    }
+  }
+
   @media screen and (max-width: 800px) {
     #complex-css {
       margin-left: 0px;
+    }
+
+    #trust-and-safety {
+      margin-left: 0vw;
+      margin-top: 2vh;
     }
 
     .project-spinner {
@@ -533,13 +555,24 @@ body {
     }
     #complex-css {
       margin-left: 10vw;
-      margin-top: 0px;
+      margin-top: -10vh;
+    }
+
+    #trust-and-safety {
+      margin-left: 0px;
+      margin-top: 5vh;
     }
 
     .projects-container {
       display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 60% 40%;
+    max-height: 180vh;
+    margin-top: -40vh;
+    }
+
+    .projects-top {
+      min-height: 180vh;
     }
   }
 
