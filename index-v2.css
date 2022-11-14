@@ -65,7 +65,7 @@ body {
   #menu a {
     color: black;
     font-size: calc(12px + 2vw);
-    margin-left: calc(8px + 1vw);
+    margin-right: calc(8px + 1vw);
   }
   
   .curr-page {
@@ -119,6 +119,10 @@ body {
 
   .spinny-image:hover {
     animation-play-state: running;
+  }
+
+  .home-spinner:hover {
+    opacity: 50%;
   }
   
   #top {
