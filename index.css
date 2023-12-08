@@ -509,3 +509,16 @@ h1.birthday-scrollable {
     max-width: 100%;
   }
 }
+
+.zine-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 5%;
+}
+
+.zine * {
+  font-family: 'Xanh Mono';
+  text-align: center;
+}
