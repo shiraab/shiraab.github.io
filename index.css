@@ -518,9 +518,21 @@ h1.birthday-scrollable {
   padding: 10% 5%;
 }
 
-.zine * {
+.portfolio-body {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10% 5%;
+}
+
+.portfolio * {
   font-family: 'Xanh Mono';
-  text-align: center;
+}
+
+.portfolio a {
+  text-decoration: underline;
+  color: black;
 }
 
 .text-small {
