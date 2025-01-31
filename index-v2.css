@@ -24,50 +24,50 @@ body {
   h4 {
     font-size: clamp(16px, calc(12px + 0.25vw, 48px));
   }
-  
+
   h2 a {
     color: black;
   }
-  
+
   h3 a {
     color: black;
   }
-  
+
   h2 {
     font-size: calc(16px + 2vw);
   }
-  
+
   h3 {
     font-size: calc(12px + 2vw);
     padding: 0px;
   }
-  
+
   h4 {
     font-size: calc(12px + 2vw);
   }
-  
+
   button p {
     font-size: calc(12px + 1vw);
   }
-  
+
   #title-menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 2px solid black;
   }
-  
+
   #menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
   }
-  
+
   #menu a {
     color: black;
     font-size: calc(12px + 2vw);
     margin-right: calc(8px + 1vw);
   }
-  
+
   .curr-page {
     font-style: italic;
     text-decoration: underline;
@@ -79,18 +79,18 @@ body {
     justify-content: space-between;
     height: 90vh;
   }
-  
+
   .blurb {
     text-align: justify;
     padding: 8px;
   }
-  
+
   .blurb-splash {
     text-align: justify;
     padding: 5px;
     font-style:italic;
   }
-  
+
   .note {
     font-size: calc(10px + 1vw);
     font-style: italic;
@@ -124,47 +124,47 @@ body {
   .home-spinner:hover {
     opacity: 50%;
   }
-  
+
   #top {
     flex-direction: row;
     border-bottom: 2px dotted black;
   }
-  
+
   #latest {
     border-bottom: 2px dotted black;
   }
-  
+
   #latest h3 {
     font-size: calc(12px + 1vw);
     padding: 5px;
   }
-  
+
   #latest p {
     font-size: calc(12px + 1vw);
     padding: 5px;
   }
-  
+
   #latest span p {
     font-size: calc(12px + 1vw);
     padding: 0px;
   }
-  
+
   #contact-container {
     border-top: 2px dotted black;
   }
-  
+
   #contact-container.contact-page {
     border-top: none;
     border-bottom: 2px dotted black;
   }
-  
+
   #contact {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
   }
-  
+
   #contact ul {
     display: flex;
     flex-direction: row;
@@ -175,22 +175,22 @@ body {
     margin: 0px;
     padding: 0px 8px;
   }
-  
+
   #contact li {
     padding: 5px;
     margin: 0px;
   }
-  
+
   @media screen and (max-width: 360px) {
     #contact {
       flex-direction: column;
     }
-  
+
     #contact ul {
       padding: 0px;
       width: 100%;
     }
-  
+
     #contact li {
       padding: 5px;
     }
@@ -298,11 +298,11 @@ body {
       padding-left: 0px;
     }
   }
-  
+
   .note-description {
     font-style: italic;
   }
-  
+
   button {
     all: unset;
     margin: 0px;
@@ -311,89 +311,89 @@ body {
     flex: 1;
     background-color: white;
   }
-  
+
   button:hover {
     background-color: #cacccf;
   }
-  
+
   button:focus {
     background-color: #cacccf;
   }
-  
+
   [aria-hidden="true"]{
     display:none;
   }
-  
+
   [aria-hidden="false"]{
     font-size: calc(12px + 1vw);
     padding: 5px;
     margin: 5px;
   }
-  
+
   .hide {
     display: none;
   }
-  
+
   .show {
     display: block;
   }
-  
+
   #about-this-site {
     font-size: calc(12px + 1vw);
   }
-  
+
   #about-this-site p {
     font-size: calc(12px + 1vw);
     text-align: justify;
   }
-  
+
   #about-this-site a {
     padding: 0px;
     margin: 0px;
   }
-  
+
   .egg {
     font-size: calc(4px + 1vw);
   }
-  
+
   .inline {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   .year {
     font-size: calc(12px + 1vw);
   }
-  
+
   .publication {
     font-size: calc(12px + 1vw);
     width: 100%;
     padding: 5px;
     margin:0px;
   }
-  
+
   .publication:hover {
     background-color: #cacccf;
   }
-  
+
   #blog-container {
     border-top: 2px dotted black;
   }
-  
+
   .blog-post {
     padding: 5px;
     max-width: 100%;
   }
-  
+
   .blog-post ul {
     font-size: calc(12px + 1vw);
   }
-  
+
   .blog-post p {
     font-size: calc(12px + 1vw);
   }
-  
+
   .blog-footer {
     max-width: 100%;
     padding: 5px 0px;
@@ -402,11 +402,11 @@ body {
     font-size: calc(8px + 1vw);
     font-style: italic;
   }
-  
+
   .blog-footer.bottom {
     border-bottom: none;
   }
-  
+
   @keyframes scroll {
     0% {
       margin-left: 100%;
@@ -514,7 +514,7 @@ body {
     margin-top: -30vh;
     background-position: 40% 40%;
     background-size: cover;
-    
+
   }
 
   .projects-top {
@@ -613,5 +613,11 @@ body {
   flex-direction: column;
   width: 100%;
 }
-  
-  
+
+.half-width {
+  max-width: 50%;
+}
+
+.hello {
+  font-size: clamp(14px, calc(12px + 1vw ), 32px);
+}
