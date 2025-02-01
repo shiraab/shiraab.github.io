@@ -85,6 +85,11 @@ ol {
     margin: 24px;
 }
 
+#pic-container img {
+    max-width: 40vw;
+    padding: 8px;
+}
+
 @keyframes font-change {
     0% {
         font-family: "Caveat", serif;
