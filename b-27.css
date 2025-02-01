@@ -1,0 +1,115 @@
+#b-27-page {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#b-27-page p {
+    font-family: "Space Mono";
+  font-weight: normal;
+  font-style: normal;
+}
+
+#heading {
+    font-family: 'Space Mono';
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: clamp(72px, calc(72px + 2vw), 50vw);
+}
+
+#twenty-seven {
+    font-size: clamp(108px, calc(108px + 2vw), 100vw);
+    padding: 0px 56px;
+    animation-name: font-change;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+}
+
+#twenty-seven:hover {
+    background-color: yellow;
+}
+
+#I:hover::after {
+    content: "(Shira)";
+    margin: 0px 16px;
+}
+
+#love {
+    animation-name: font-change;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-delay: 0.5s;
+}
+
+#love:hover {
+    font-style: italic;
+}
+
+#love:hover::after {
+    content: "<3";
+    padding: 0px 8px;
+    margin: 0px 16px;
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+#about:hover::after {
+    content: "/with";
+}
+
+#about:hover {
+    animation-name: background-change;
+    animation-duration: 2s;
+}
+
+#billy {
+    font-size: clamp(108px, calc(108px + 2vw), 100vw);
+}
+
+#billy:hover {
+    animation-name: font-change;
+    text-decoration: underline;
+    text-decoration-color: yellow;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+    animation-delay: 0.5s;
+}
+
+#billy:hover::after {
+    content: "!!!";
+    font-style: italic;
+    margin: 0px 16px;
+    font-size: clamp(48px, calc(48px + 2vw), 30vw);
+}
+
+ol {
+    margin: 24px;
+}
+
+@keyframes font-change {
+    0% {
+        font-family: "Caveat", serif;
+    }
+    33% {
+        font-family: 'Baskerville';
+        font-style: italic;
+    }
+    66% {
+        font-family: 'Syne';
+    }
+    100% {
+        font-family: 'Baskerville';
+        font-style: normal;
+    }
+}
+
+@keyframes background-change {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: yellow;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
